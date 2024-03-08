@@ -1,6 +1,27 @@
 import Navbar from "../../components/Shared/Nav/Navbar"
-import reviews from "../../assets/reviews.png"
+
+import review from "../../assets/reviews.png"
+
+import '@smastrom/react-rating/style.css'
+import { useState } from "react";
+import { Rating } from "@smastrom/react-rating";
+
 const SpongebobHouse = () => {
+
+    const [reviews, setReviews] = useState(''); // State for reviews
+    const [rating, setRating] = useState(0); // State for rating
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        // Now 'reviews' and 'rating' hold the form values
+        console.log('Reviews:', reviews);
+        console.log('Rating:', rating);
+         
+        setReviews('');
+        setRating(0);
+
+    };
     return (
         <div className="bg-sky-200 rounded-[70px] px-14 ">
             <Navbar />
@@ -9,22 +30,22 @@ const SpongebobHouse = () => {
                     <div className=" bg-slate-200 px-5 rounded-[70px] py-10 w-[200px]">
                         <h1 className="font-nothing text-2xl text-center">Others you may like:</h1>
                         <div>
-                        <h2 className="mt-5"> 01. Hogwart’s Castle</h2>
-                        <button>Rating:</button>
+                            <h2 className="mt-5"> 01. Hogwart’s Castle</h2>
+                            <button>Rating:</button>
                         </div>
                         <div>
-                        <h2 className="mt-5"> 01. Hogwart’s Castle</h2>
-                        <button>Rating:</button>
+                            <h2 className="mt-5"> 01. Hogwart’s Castle</h2>
+                            <button>Rating:</button>
                         </div>
                     </div>
                     <div>
                         <h1>Spongebob’s House</h1>
                         <div className="flex gap-2">
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
+                            <img src={review} alt="" className="w-10 h-7" />
+                            <img src={review} alt="" className="w-10 h-7" />
+                            <img src={review} alt="" className="w-10 h-7" />
+                            <img src={review} alt="" className="w-10 h-7" />
+                            <img src={review} alt="" className="w-10 h-7" />
                         </div>
                         <div>
                             <p> Set #:</p>
@@ -43,41 +64,43 @@ const SpongebobHouse = () => {
                 </div>
                 <div className="bg-white px-10 rounded-full pt-5 mt-10 ">
                     <h1 className="text-center">Set Reviews:</h1>
-                    <div className="flex gap-4 pb-12 mt-5 px-8">
-                        <div className="tracking-[4px]"> placeholder placeholder placeholder placeholder <br />
-                            placeholder placeholder placeholder placeholder <br />
-                            placeholder placeholder placeholder placeholder <br />
+                    <form onSubmit={handleFormSubmit}>
+                        <div className="flex justify-around items-center">
+                           
+                                <div className="flex py-8">
+                                    <div className="mt-5">
+                                        <textarea
+                                            id="reviewsField"
+                                            value={reviews}
+                                            onChange={(e) => setReviews(e.target.value)}
+                                            className="border"
+                                        />
+                                         <br />
+                                         <label htmlFor="textField">Reviews Field:</label>
+                                    </div>
+                                    
+                                </div>
+                                <div>
+                                        <div className="flex justify-center items-center">
+                                            <Rating
+                                                style={{ maxWidth: 150 }}
+                                                value={rating}
+                                                onChange={setRating}
+                                                isRequired
+                                            />
+                                        </div>
+                                        <h1 className=" text-center">User’s Rating</h1>
+                                    </div>
+                            
+                            <div className="flex justify-center">
+                                <button className="px-4 py-2 h-12 rounded-md bg-sky-200" type="submit">
+                                    Post Reviews
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                        <div className="flex">
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                        </div>
-                        <h1 className="tracking-[5px] mt-2">User’s Rating</h1>
-                        </div>
-                    </div>
-                    <div className="flex gap-4 pb-12 mt-5 px-8">
-                        <div className="tracking-[4px]"> placeholder placeholder placeholder placeholder <br />
-                            placeholder placeholder placeholder placeholder <br />
-                            placeholder placeholder placeholder placeholder <br />
-                        </div>
-                        <div>
-                        <div className="flex">
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                            <img src={reviews} alt="" className="w-10 h-7" />
-                        </div>
-                        <h1 className="tracking-[5px] mt-2">User’s Rating</h1>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-
         </div>
     )
 }
