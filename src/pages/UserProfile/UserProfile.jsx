@@ -2,10 +2,10 @@ import Navbar from "../../components/Shared/Nav/Navbar"
 import review from "../../assets/reviews.png"
 const UserProfile = () => {
     return (
-        <div className="bg-yellow-200 rounded-[70px] px-14 ">
+        <div className="bg-yellow-200 rounded-[70px] lg:px-14 px-6 pt-2">
             <Navbar />
             <div className="min-h-[calc(100vh-54px)] ">
-                <div className="flex justify-between">
+                <div className="flex flex-wrap lg:flex-row justify-center lg:justify-between">
                     <div className=" bg-slate-200 px-5 rounded-[70px] py-10 w-[200px]">
                         <h1 className="">Others you may like:</h1>
                         <h2 className="mt-5"> 01. Hogwart’s Castle</h2>
@@ -13,8 +13,8 @@ const UserProfile = () => {
                         <h2 className="mt-5"> 03. Hogwart’s Castle</h2>
                     </div>
                     <div>
-                        <h1>User’s Profile Page</h1>
-                        <div>
+                        <h1 className="mt-5 text-center mb-5">User’s Profile Page</h1>
+                        <div className="text-center mb-10">
                             <p> Member since: January 2023</p>
                             <p>Sets Completed: 12</p>
                             <p>Currently Building: Avenger’s Tower</p>
@@ -29,9 +29,9 @@ const UserProfile = () => {
                     </div>
 
                 </div>
-                <div className="bg-white px-10 rounded-full pt-5 mt-3">
+                <div className="bg-white px-10 rounded-full pt-5 lg:mt-3 mt-10">
                     <h1 className="text-center">User’s reviews</h1>
-                    <div className="flex gap-4 pb-12 mt-5 px-8">
+                    <div className="flex gap-4 pb-12 mt-5 px-8 flex-col md:flex-row lg:justify-around items-center">
                         <div className="tracking-[4px]"> placeholder placeholder placeholder placeholder <br />
                             placeholder placeholder placeholder placeholder <br />
                             placeholder placeholder placeholder placeholder <br />

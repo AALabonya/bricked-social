@@ -36,11 +36,11 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                         />
                     </svg>
                 </button>
-                 <h1 className="font-nothing text-4xl font-semibold leading-[50px]">brickd social</h1></div>
+                 <h1 className="font-nothing text-sm lg:text-4xl font-semibold lg:leading-[50px]">brickd social</h1></div>
 
                 <div className="relative mx-4 lg:mx-0">
                     <input
-                        className="w-32 pl-4 pr-4 py-3 border-dashed border-gray-400 border bg-slate-200 focus:outline-none rounded-md form-input sm:w-64 "
+                        className="md:w-32 w-28 pl-1 md:pl-4 md:pr-4 py-3 border-dashed border-gray-400 border bg-slate-200 focus:outline-none rounded-md form-input sm:w-64 "
                         type="text"
                         placeholder="Find you set..."
                     />
@@ -50,7 +50,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                 <div className="relative">
                     <button
                         onClick={() => setDropdownOpen(!dropdownOpen)}
-                        className="relative block  py-3 px-3 border-dashed border-gray-400 border bg-slate-200 overflow-hidden rounded-3xl shadow"
+                        className="relative block text-sm  py-3 md:px-3 border-dashed border-gray-400 border bg-slate-200 overflow-hidden rounded-3xl shadow"
                     >
                        <div>Hey, user! | Logout</div>
                     </button>

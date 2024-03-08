@@ -31,21 +31,21 @@ const SignUp = () => {
 
 
     return (
-        <div className=" bg-sky-200 rounded-[70px] px-14">
+        <div className=" bg-sky-200 rounded-[70px] lg:px-14 px-6 pt-2">
             <Navbar />
 
             <div
-             className="min-h-[calc(100vh-84px)] flex items-center rounded-3xl">
+             className="min-h-[calc(100vh-84px)] flex items-center rounded-3xl ">
 
                 <form
                     onSubmit={handleSubmit}
-                    className="w-2/4 mx-auto border-4 p-2 bg-slate-200 shadow-lg z-30 rounded-[90px]">
+                    className="lg:w-2/4 mx-auto border-4 p-2 bg-slate-200 shadow-lg z-30 rounded-[90px] px-6 pb-5 mb-5">
                     <div className="text-center my-4">
                         <h1 className="text-2xl uppercase font-nothing">
                             sign up !
                         </h1>
                     </div>
-                   <div className="flex items-center justify-center gap-5">
+                   <div className="flex flex-col lg:flex-row items-center  justify-center gap-5">
                    <div>
                    <div className="relative z-0 w-full mb-5 group flex justify-center">
                         <input type="file"

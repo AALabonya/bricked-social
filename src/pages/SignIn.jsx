@@ -18,7 +18,7 @@ console.log(email, password);
   };
 
   return (
-    <div className=" bg-sky-200 rounded-[70px] px-14">
+    <div className=" bg-sky-200 rounded-[70px] lg:px-14 px-6 pt-2">
             <Navbar />
 
             <div
@@ -28,7 +28,7 @@ console.log(email, password);
 
                 <form
                     onSubmit={handleSubmit}
-                    className="w-2/4 mx-auto border-4 p-2 bg-slate-200 shadow-lg z-30 rounded-[90px]"
+                    className="lg:w-2/4 mx-auto border-4 p-2 bg-slate-200 shadow-lg z-30 rounded-[90px] px-7 pb-5 mb-4"
                 >
                     <div className="text-center my-4">
                         <h1 className="text-2xl uppercase font-nothing">
@@ -65,6 +65,7 @@ console.log(email, password);
                         </button>
                     </div>
                    
+
                     <p className="mt-5 text-center font-nothing">
                           New user?{" "}
                         <Link to="/signUp" className="text-blue-600">

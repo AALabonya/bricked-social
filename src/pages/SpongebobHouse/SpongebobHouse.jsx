@@ -23,10 +23,10 @@ const SpongebobHouse = () => {
 
     };
     return (
-        <div className="bg-sky-200 rounded-[70px] px-14 ">
+        <div className="bg-sky-200 rounded-[70px] lg:px-14 px-6 pt-2">
             <Navbar />
             <div className="min-h-[calc(100vh-54px)] ">
-                <div className="flex justify-between">
+                <div className="flex flex-wrap lg:flex-row justify-center lg:justify-between">
                     <div className=" bg-slate-200 px-5 rounded-[70px] py-10 w-[200px]">
                         <h1 className="font-nothing text-2xl text-center">Others you may like:</h1>
                         <div>
@@ -39,7 +39,7 @@ const SpongebobHouse = () => {
                         </div>
                     </div>
                     <div>
-                        <h1>Spongebob’s House</h1>
+                        <h1 className="mt-5 text-center mb-5">Spongebob’s House</h1>
                         <div className="flex gap-2">
                             <img src={review} alt="" className="w-10 h-7" />
                             <img src={review} alt="" className="w-10 h-7" />
@@ -47,7 +47,7 @@ const SpongebobHouse = () => {
                             <img src={review} alt="" className="w-10 h-7" />
                             <img src={review} alt="" className="w-10 h-7" />
                         </div>
-                        <div>
+                        <div className="text-center mb-10">
                             <p> Set #:</p>
                             <p>Part Count:</p>
                             <p>Year released:</p>
@@ -65,7 +65,7 @@ const SpongebobHouse = () => {
                 <div className="bg-white px-10 rounded-full pt-5 mt-10 ">
                     <h1 className="text-center">Set Reviews:</h1>
                     <form onSubmit={handleFormSubmit}>
-                        <div className="flex justify-around items-center">
+                        <div className="flex flex-col md:flex-row lg:justify-around items-center pb-10">
                            
                                 <div className="flex py-8">
                                     <div className="mt-5">
@@ -81,7 +81,7 @@ const SpongebobHouse = () => {
                                     
                                 </div>
                                 <div>
-                                        <div className="flex justify-center items-center">
+                                        <div className="flex justify-center items-center mb-2">
                                             <Rating
                                                 style={{ maxWidth: 150 }}
                                                 value={rating}
@@ -89,7 +89,7 @@ const SpongebobHouse = () => {
                                                 isRequired
                                             />
                                         </div>
-                                        <h1 className=" text-center">User’s Rating</h1>
+                                        <h1 className=" text-center mb-3">User’s Rating</h1>
                                     </div>
                             
                             <div className="flex justify-center">

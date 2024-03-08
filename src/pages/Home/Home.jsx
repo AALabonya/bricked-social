@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
-        <div className="min-h-[500px] bg-slate-200"><h1 className="font-semibold text-center text-4xl">Featured Sets</h1>
+        <div className="min-h-[500px] bg-slate-200"><h1 className="font-semibold text-center lg:text-4xl">Featured Sets</h1>
 
          <Link to="/SpongebobHouse">
          <div className="mt-5 hover:border hover:border-gray-900 w-80 rounded-lg">
