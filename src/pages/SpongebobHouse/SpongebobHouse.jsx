@@ -8,8 +8,8 @@ import { Rating } from "@smastrom/react-rating";
 
 const SpongebobHouse = () => {
 
-    const [reviews, setReviews] = useState(''); // State for reviews
-    const [rating, setRating] = useState(0); // State for rating
+    const [reviews, setReviews] = useState(''); 
+    const [rating, setRating] = useState(0); 
 
     const handleFormSubmit = (event) => {
         event.preventDefault();

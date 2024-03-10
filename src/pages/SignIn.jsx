@@ -1,21 +1,35 @@
 
-import { Link,} from "react-router-dom";
+import { Link, useNavigate,} from "react-router-dom";
 import Navbar from "../components/Shared/Nav/Navbar";
+import axios from "axios";
 
 
 
 const SignIn = () => {
 
+    const navigate = useNavigate();
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-console.log(email, password);
-   
-  };
+        const info = {
+            email, password,
+        }
+
+        const res = await axios.post('http://localhost:5000/login', info);
+        console.log(res.data?.login);
+        if (!res.data?.login) {
+            window.alert('Please register before login');
+        } else {
+            window.alert('Successfully login');
+            localStorage.setItem('userInfo', JSON.stringify(res?.data));
+            navigate('/');
+        }
+
+    };
 
   return (
     <div className=" bg-sky-200 rounded-[70px] lg:px-14 px-6 pt-2">
